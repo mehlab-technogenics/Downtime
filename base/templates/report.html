@@ -1,0 +1,36 @@
+<html>
+<title>Monitoring</title>
+<h1>DownTime Monitoring</h1>
+<body>
+    {% for profiles in profile %}
+<h2>{{  profiles.title }}</h2>
+<h3>{{  profiles.url }}</h3>
+<h3>{{  profiles.email }}</h3>
+    <dl>
+        {% for key, value in history.items %} 
+        {% if key == profiles.id %}
+        {% for his in value %}
+
+        <dd>{{ his.timestamp }}</dd>
+
+        {% endfor %}
+            {% endif %}
+        
+        {% endfor %}
+    </dl>
+    {% endfor %}    
+
+  
+    <form method='GET'>
+        <button type='submit'> sort me</button>
+        </form>
+        
+
+
+       
+
+
+
+    </body>
+
+</html>
